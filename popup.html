@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-face">
+                    <div class="logo-eyes">
+                        <div class="logo-eye"></div>
+                        <div class="logo-eye"></div>
+                    </div>
+                    <div class="logo-mouth"></div>
+                    <div class="logo-cheeks left"></div>
+                    <div class="logo-cheeks right"></div>
+                </div>
+            </div>
+            <div class="brand">Vertey</div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="nav-tabs">
+            <button class="tab active" data-tab="convert-files">📄 Convert Files</button>
+            <button class="tab" data-tab="corrupt-files">🛠️ Corrupt Files</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Convert Files Tab -->
+            <div id="convert-files" class="tab-pane active">
+                <div class="section">
+                    <div class="form-group">
+                        <label class="form-label">File upload</label>
+                        <input type="file" class="file-input" id="fileInput" accept="*/*">
+                    </div>
+
+                    <div class="format-row">
+                        <div class="format-group">
+                            <label class="form-label">From</label>
+                            <select id="fromFormat">
+                                <option value="">Select format</option>
+                                <option value="pdf">PDF</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png">PNG</option>
+                                <option value="docx">DOCX</option>
+                                <option value="mp4">MP4</option>
+                                <option value="mp3">MP3</option>
+                                <option value="jpeg">JPEG</option>
+                                <option value="txt">TXT</option>
+                                <option value="doc">DOC</option>
+                                <option value="gif">GIF</option>
+                                <option value="webp">WebP</option>
+                                <option value="avi">AVI</option>
+                                <option value="mov">MOV</option>
+                                <option value="wav">WAV</option>
+                                <option value="bmp">BMP</option>
+                                <option value="tiff">TIFF</option>
+                                <option value="rtf">RTF</option>
+                                <option value="flac">FLAC</option>
+                                <option value="wmv">WMV</option>
+                                <option value="aac">AAC</option>
+                            </select>
+                        </div>
+                        <div class="format-group">
+                            <label class="form-label">To</label>
+                            <select id="toFormat">
+                                <option value="">Select format</option>
+                                <option value="pdf">PDF</option>
+                                <option value="jpg">JPG</option>
+                                <option value="png">PNG</option>
+                                <option value="docx">DOCX</option>
+                                <option value="mp4">MP4</option>
+                                <option value="mp3">MP3</option>
+                                <option value="jpeg">JPEG</option>
+                                <option value="txt">TXT</option>
+                                <option value="doc">DOC</option>
+                                <option value="gif">GIF</option>
+                                <option value="webp">WebP</option>
+                                <option value="avi">AVI</option>
+                                <option value="mov">MOV</option>
+                                <option value="wav">WAV</option>
+                                <option value="extract">Extract Content</option>
+                                <option value="fdf-extract">Extract Form Data (FDF)</option>
+                                <option value="bmp">BMP</option>
+                                <option value="tiff">TIFF</option>
+                                <option value="rtf">RTF</option>
+                                <option value="flac">FLAC</option>
+                                <option value="wmv">WMV</option>
+                                <option value="aac">AAC</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group" id="extractFormFields" style="display: none;">
+                        <input type="checkbox" id="extractFormFieldsCheck">
+                        <label for="extractFormFieldsCheck">Extract all form fields</label>
+                    </div>
+
+                    <div class="checkbox-group" id="extractSignatures" style="display: none;">
+                        <input type="checkbox" id="extractSignaturesCheck">
+                        <label for="extractSignaturesCheck">Extract digital signatures</label>
+                    </div>
+
+                    <div class="checkbox-group" id="extractText" style="display: none;">
+                        <input type="checkbox" id="extractTextCheck">
+                        <label for="extractTextCheck">Extract text content</label>
+                    </div>
+
+                    <div class="checkbox-group" id="extractImages" style="display: none;">
+                        <input type="checkbox" id="extractImagesCheck">
+                        <label for="extractImagesCheck">Extract images</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="autoOrient">
+                        <label for="autoOrient">Auto orient</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="stripMetadata">
+                        <label for="stripMetadata">Strip metadata</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Background color</label>
+                        <div class="color-input-group">
+                            <input type="checkbox" id="useBackgroundColor">
+                            <input type="color" id="backgroundColor" value="#ffffff">
+                            <input type="text" class="color-text" id="backgroundColorText" value="#FFFFFF">
+                        </div>
+                    </div>
+
+                    <div class="advanced-options">
+                        <div class="form-group">
+                            <label class="form-label">Page orientation</label>
+                            <select id="pageOrientation">
+                                <option value="portrait">Portrait</option>
+                                <option value="landscape">Landscape</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Page size</label>
+                            <select id="pageSize">
+                                <option value="A4">A4</option>
+                                <option value="A3">A3</option>
+                                <option value="A5">A5</option>
+                                <option value="Letter">Letter</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="advanced-options">
+                        <div class="form-group">
+                            <label class="form-label">Margin (mm)</label>
+                            <div class="margin-inputs">
+                                <input type="number" placeholder="T" id="marginTop" value="10">
+                                <input type="number" placeholder="R" id="marginRight" value="10">
+                                <input type="number" placeholder="B" id="marginBottom" value="10">
+                                <input type="number" placeholder="L" id="marginLeft" value="10">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">DPI</label>
+                            <input type="number" id="dpi" value="300" min="72" max="600">
+                        </div>
+                    </div>
+
+                    <div id="fileStatus" class="status-message"></div>
+                    <button class="convert-btn" id="convertFileBtn">Convert</button>
+                </div>
+            </div>
+
+            <!-- Corrupt Files Tab -->
+            <div id="corrupt-files" class="tab-pane">
+                <div class="section">
+                    <div class="warning-box">
+                        <div class="warning-icon">⚠️</div>
+                        <div class="warning-text">
+                            <strong>WARNING:</strong> This will permanently corrupt your file! The file will become unusable and unrecoverable. Only use for testing purposes.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">File to corrupt</label>
+                        <input type="file" class="file-input" id="corruptFileInput" accept="*/*">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="preserveSize">
+                        <label for="preserveSize">Preserve file size</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="addExtension">
+                        <label for="addExtension">Add ".corrupted" to filename</label>
+                    </div>
+
+                    <div class="danger-confirmation">
+                        <div class="checkbox-group danger-check">
+                            <input type="checkbox" id="confirmCorruption">
+                            <label for="confirmCorruption">I understand this will permanently damage the file</label>
+                        </div>
+                    </div>
+
+                    <div id="corruptStatus" class="status-message"></div>
+                    <button class="corrupt-btn" id="corruptFileBtn" disabled>⚠️ Corrupt File</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
